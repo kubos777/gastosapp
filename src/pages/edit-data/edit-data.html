@@ -1,0 +1,56 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Editar gasto</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h2>Editar gasto</h2>
+	<form (ngSubmit)="updateData()">
+		<ion-item>
+			<ion-label>Fecha: </ion-label>
+			<ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+		</ion-item>
+		<ion-item>
+			<ion-label>Tipo: </ion-label>
+			<ion-select [(ngModel)]="data.type" name="type" required="">
+				<ion-option value="Ingreso">
+					Ingreso
+				</ion-option>
+				<ion-option value="Gasto">
+					Gasto
+				</ion-option>
+				
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-label>Descripción</ion-label>
+			<ion-input type="text" placeholder="Descripción" [(ngModel)]="data.description" name="description" required=""></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Cantidad</ion-label>
+			<ion-input type="number" placeholder="Cantidad" [(ngModel)]="data.amount" name="amount" pattern="[0-9]*"  required="" ></ion-input>
+		</ion-item>
+		<ion-input type="hidden" [(ngModel)]="data.rowid" name="rowid"></ion-input>
+		<button ion-button type="submit">Guardar gasto</button>
+	</form>
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
